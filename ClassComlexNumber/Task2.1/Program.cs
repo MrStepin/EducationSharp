@@ -54,19 +54,42 @@ namespace Task2._1
 
         public static Complex operator + (Complex ValidPart, Complex AllegedPart )
         {
-            Complex complexnumber = new Complex();
-            complexnumber = ValidPart + AllegedPart;
-            return complexnumber;
+            Complex complexNumber = new Complex();
+            complexNumber.PropertyValidPart = ValidPart.PropertyValidPart + AllegedPart.PropertyValidPart;
+            complexNumber.PropertyAllegedPart = ValidPart.PropertyAllegedPart + AllegedPart.PropertyAllegedPart;
+            return complexNumber;
         } 
-        
+
+        public static Complex operator - (Complex ValidPart, Complex AllegedPart )
+        {
+            Complex complexNumber = new Complex();
+            complexNumber.PropertyValidPart = ValidPart.PropertyValidPart - AllegedPart.PropertyValidPart;
+            complexNumber.PropertyAllegedPart = ValidPart.PropertyAllegedPart - AllegedPart.PropertyAllegedPart;
+            return complexNumber;
+        } 
+
+        public static Complex operator * (Complex ValidPart, Complex AllegedPart )
+        {
+            Complex complexNumber = new Complex();
+            complexNumber.PropertyValidPart = ValidPart.PropertyValidPart * AllegedPart.PropertyValidPart - ValidPart.PropertyAllegedPart * AllegedPart.PropertyAllegedPart;
+            complexNumber.PropertyAllegedPart = ValidPart.PropertyAllegedPart * AllegedPart.PropertyValidPart + ValidPart.PropertyValidPart * AllegedPart.PropertyAllegedPart;
+            return complexNumber;
+        } 
     }
 
     class Program
     {
         static void Main(string[] args)
         {
-            Complex test = new Complex();
-            Console.WriteLine(test.CalculatedModule);
+
+            Complex firstComplex = new Complex(5, 8);
+            Complex secondComplex = new Complex(2, -3);
+            Complex sumComplex = firstComplex + secondComplex;
+            Complex subtractionComplex = firstComplex - secondComplex;
+            Complex multiplicationComplex = firstComplex * secondComplex;
+            Console.WriteLine(sumComplex);
+            Console.WriteLine(subtractionComplex);
+            Console.WriteLine(multiplicationComplex);
             Console.ReadLine(); 
         }
 
