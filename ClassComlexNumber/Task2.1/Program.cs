@@ -10,37 +10,29 @@ namespace Task2._1
     class Complex
     {
 
-        private double ValidPart;
-        private double AllegedPart;
+        private double RealPart;
+        private double ImaginaryPart;
         private double a;
         private double b;
         private double ModuleNumber;
         private double ArgumentNumber; 
 
-        public Complex() { ValidPart = 1; AllegedPart = 1; }
-        public Complex(double Valid) { ValidPart = Valid; AllegedPart = 0; }
-        public Complex(double Valid, double Alleged) { ValidPart = Valid; AllegedPart = Alleged; }
+        public Complex() { RealPart = 1; ImaginaryPart = 1; }
+        public Complex(double a) { RealPart = a; ImaginaryPart = 0; }
+        public Complex(double a, double b) { RealPart = a; ImaginaryPart = b; }
 
         static Complex CreatingOfComplex(double CalculatedModule, double CalculateArgument)
         {
             Complex ComplexNumber = new Complex();
-            double ValidPart = Math.Abs(CalculatedModule) * Math.Cos(CalculateArgument);
-            double AllegedPart = Math.Abs(CalculatedModule) * Math.Sin(CalculateArgument);
+            double RealPart = Math.Abs(CalculatedModule) * Math.Cos(CalculateArgument);
+            double ImaginaryPart = Math.Abs(CalculatedModule) * Math.Sin(CalculateArgument);
 
             return ComplexNumber;
         }
 
-        public double PropertyValidPart
-        {
-            get { return ValidPart; }
-            set { ValidPart = value; }
-        }
-
-        public double PropertyAllegedPart
-        {
-            get { return AllegedPart; }
-            set { AllegedPart = value; }
-        }
+        public double Real { get; set; }
+        public double Imaginary { get; set; }
+        
 
         public double CalculatedModule
         {
@@ -52,29 +44,35 @@ namespace Task2._1
             get { return ArgumentNumber = Math.Atan(b / a); }
         }
 
-        public static Complex operator + (Complex ValidPart, Complex AllegedPart )
+        public static Complex operator + (Complex RealPart, Complex ImaginaryPart )
         {
             Complex complexNumber = new Complex();
-            complexNumber.PropertyValidPart = ValidPart.PropertyValidPart + AllegedPart.PropertyValidPart;
-            complexNumber.PropertyAllegedPart = ValidPart.PropertyAllegedPart + AllegedPart.PropertyAllegedPart;
+            complexNumber.Real = RealPart.Real + ImaginaryPart.Real;
+            complexNumber.Imaginary = RealPart.Imaginary + ImaginaryPart.Imaginary;
             return complexNumber;
         } 
 
-        public static Complex operator - (Complex ValidPart, Complex AllegedPart )
+        public static Complex operator - (Complex RealPart, Complex ImaginaryPart )
         {
             Complex complexNumber = new Complex();
-            complexNumber.PropertyValidPart = ValidPart.PropertyValidPart - AllegedPart.PropertyValidPart;
-            complexNumber.PropertyAllegedPart = ValidPart.PropertyAllegedPart - AllegedPart.PropertyAllegedPart;
+            complexNumber.Real = RealPart.Real - ImaginaryPart.Real;
+            complexNumber.Imaginary = RealPart.Imaginary - ImaginaryPart.Imaginary;
             return complexNumber;
         } 
 
-        public static Complex operator * (Complex ValidPart, Complex AllegedPart )
+        public static Complex operator * (Complex RealPart, Complex ImaginaryPart )
         {
             Complex complexNumber = new Complex();
-            complexNumber.PropertyValidPart = ValidPart.PropertyValidPart * AllegedPart.PropertyValidPart - ValidPart.PropertyAllegedPart * AllegedPart.PropertyAllegedPart;
-            complexNumber.PropertyAllegedPart = ValidPart.PropertyAllegedPart * AllegedPart.PropertyValidPart + ValidPart.PropertyValidPart * AllegedPart.PropertyAllegedPart;
+            complexNumber.Real = RealPart.Real * ImaginaryPart.Real - RealPart.Imaginary * ImaginaryPart.Imaginary;
+            complexNumber.Imaginary = RealPart.Imaginary * ImaginaryPart.Real + RealPart.Real * ImaginaryPart.Imaginary;
             return complexNumber;
         } 
+
+        public override string ToString()
+
+            {
+            return $" {Real} + {Imaginary} ";
+            }
     }
 
     class Program
@@ -82,8 +80,8 @@ namespace Task2._1
         static void Main(string[] args)
         {
 
-            Complex firstComplex = new Complex(5, 8);
-            Complex secondComplex = new Complex(2, -3);
+            Complex firstComplex = new Complex(1, 1);
+            Complex secondComplex = new Complex(1, 1);
             Complex sumComplex = firstComplex + secondComplex;
             Complex subtractionComplex = firstComplex - secondComplex;
             Complex multiplicationComplex = firstComplex * secondComplex;
