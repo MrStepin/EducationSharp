@@ -5,3 +5,10 @@ C:\Users\Stas\source\repos\Task2.1\Task2.1\obj\Debug\Task2.1.csprojAssemblyRefer
 C:\Users\Stas\source\repos\Task2.1\Task2.1\obj\Debug\Task2.1.csproj.CoreCompileInputs.cache
 C:\Users\Stas\source\repos\Task2.1\Task2.1\obj\Debug\Task2.1.exe
 C:\Users\Stas\source\repos\Task2.1\Task2.1\obj\Debug\Task2.1.pdb
+C:\Users\Stas\Source\Repos\MrStepin\EducationSharp\ClassComlexNumber\Task2.1\bin\Debug\Task2.1.exe.config
+C:\Users\Stas\Source\Repos\MrStepin\EducationSharp\ClassComlexNumber\Task2.1\bin\Debug\Task2.1.exe
+C:\Users\Stas\Source\Repos\MrStepin\EducationSharp\ClassComlexNumber\Task2.1\bin\Debug\Task2.1.pdb
+C:\Users\Stas\Source\Repos\MrStepin\EducationSharp\ClassComlexNumber\Task2.1\obj\Debug\Task2.1.csprojAssemblyReference.cache
+C:\Users\Stas\Source\Repos\MrStepin\EducationSharp\ClassComlexNumber\Task2.1\obj\Debug\Task2.1.csproj.CoreCompileInputs.cache
+C:\Users\Stas\Source\Repos\MrStepin\EducationSharp\ClassComlexNumber\Task2.1\obj\Debug\Task2.1.exe
+C:\Users\Stas\Source\Repos\MrStepin\EducationSharp\ClassComlexNumber\Task2.1\obj\Debug\Task2.1.pdb
